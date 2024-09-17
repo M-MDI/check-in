@@ -1,0 +1,9 @@
+var result string 
+
+remove space or taps from the bigining 
+
+check if we have more than one space btween our words 
+
+if yes continue 
+
+remore first and last space

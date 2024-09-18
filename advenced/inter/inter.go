@@ -6,23 +6,20 @@ import (
 )
 
 func inter(s1, s2 string) string {
-	seen := make(map[rune]bool)
 	result := ""
-
-	// Create a map to store characters of s2
-	s2Chars := make(map[rune]bool)
-	for _, char := range s2 {
-		s2Chars[char] = true
-	}
-
-	// Iterate through s1 and check if the character exists in s2
-	for _, char := range s1 {
-		if s2Chars[char] && !seen[char] {
-			result += string(char)
-			seen[char] = true // Mark character as seen to avoid duplicates
+	s2Chars := make(map[rune]int)
+		for i := 0; i < len(s1); i++ {
+			char := rune(s1[i])
+			for _, char2 := range s2 {
+				if char == char2 {
+					s2Chars[char]++
+						if s2Chars[char] == 1 {
+							result += string(char)
+						}
+				i++
+			}
 		}
 	}
-
 	return result
 }
 
@@ -30,6 +27,5 @@ func main() {
 	if len(os.Args) != 3 {
 		return
 	}
-
 	fmt.Println(inter(os.Args[1], os.Args[2]))
 }

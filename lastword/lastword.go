@@ -10,16 +10,15 @@ func main() {
 
 func LastWord(s string) string {
 n := len(s)
-	// Start from the end of the string and skip trailing spaces
+
 	i := n - 1
 	for i >= 0 && s[i] == ' ' {
 		i--
 	}
-	// If there are no non-space characters, return just a newline
 	if i < 0 {
 		return "\n"
 	}
-	// Find the start of the last word
+	
 	end := i
 	for i >= 0 && s[i] != ' ' {
 		i--

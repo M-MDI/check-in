@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"strconv"
 )
 
@@ -12,40 +11,19 @@ func fprime(n int) string {
 	}
 
 	result := ""
-	for i := 2; i*i <= n; i++ {
-		for n%i == 0 {
+	for i := 2; i <= n && n != 0; i++ {
+		if n%i == 0 {
 			if result != "" {
 				result += "*"
 			}
 			result += strconv.Itoa(i)
 			n /= i
+			i--
 		}
 	}
-	if n > 1 {
-		if result != "" {
-			result += "*"
-		}
-		result += strconv.Itoa(n)
-	}
-
 	return result
 }
 
 func main() {
-	if len(os.Args) != 2 {
-		return
-	}
-
-	// Convert argument to integer
-	num, err := strconv.Atoi(os.Args[1])
-	if err != nil || num <= 0 {
-		return
-	}
-
-	// Get prime factors and print
-	result := fprime(num)
-	if result != "" {
-		fmt.Println(result)
-	}
+	fmt.Println(fprime(225225))
 }
-

@@ -18,6 +18,7 @@ func main() {
 	}
 
 	result := ""
+	
 	for i := 0; i < len(inputString); i++ {
 		if inputString[i] == charToReplace[0] {
 			result += replacementChar

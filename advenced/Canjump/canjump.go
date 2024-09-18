@@ -14,17 +14,6 @@ func CanJump(nums []uint)bool{
 	return false
 	}
 
-
-/*func CanJump(nums []uint) bool {
-	for i := 0; i < len(nums); i++ {
-		i += int(nums[i])
-		if i == len(nums)-1 {
-			return true
-		}
-	}
-	return false
-}*/
-
 func main() {
 	input1 := []uint{2, 3, 1, 1, 4}
 	fmt.Println(CanJump(input1)) // true

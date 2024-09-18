@@ -15,7 +15,7 @@ func hiddenp(s1, s2 string) int {
 		for j < len(s2) && s2[j] != s1[i] {
 			j++
 		}
-		if j == len(s2) { // If we reached the end of s2 and didn't find the character
+		if j == len(s2) { 
 			return 0
 		}
 		j++
